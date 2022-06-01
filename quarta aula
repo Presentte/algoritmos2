@@ -1,0 +1,23 @@
+algoritmo "Vetores"
+
+var
+numeros: vetor[1..10] de inteiro
+i, j, aux: inteiro
+
+inicio
+Para i de 1 ate 10 faca
+    Escreval ("Numero", i)
+    leia (numeros[i])
+fimpara
+
+Para i de 1 ate 10 faca
+    Para j de 1 ate 10 faca
+        se numeros[j] > numeros[i] entao
+            aux <- numeros[i]
+            numeros[i] <- numeros[j]
+            numeros[j] <- aux
+        fimse
+    fimpara
+fimpara
+
+fimalgoritmo
