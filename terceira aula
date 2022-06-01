@@ -1,0 +1,50 @@
+algoritmo "Vetores"
+
+var
+numeros, numerosReversos: vetor [1..10] de inteiro
+indice, temp: inteiro
+
+inicio
+Para indice de 1 ate 10 faca
+    Escreval ("Numero", indice)
+    leia (numeros[indice])
+fimpara
+
+temp <- 11
+Para indice de 1 ate 10 faca
+    numerosReversos [temp-i] <- numeros[indice]
+fimpara
+fimalgoritmo
+
+var
+numeros1, numeros2, numeros3: vetor [1..5] de inteiro
+indice, temp: inteiro
+
+inicio
+Para indice de 1 ate 5 faca
+    Escreval ("1- Numeros", indice)
+    leia (numeros1[indice])
+fimpara
+
+Para indice de 1 ate 5 faca
+    Escreval ("2 - Numeros", indice)
+    leia (numeros2[indice])
+fimpara
+
+Escreval ("1 - soma")
+Escreval ("2 - subtracao")
+leia (opcao)
+
+se opcao = "1" entao
+    Para indice de 1 ate 5 faca
+        numeros3 [indice] <- numeros1[indice] + numeros2[indice]
+    fimpara
+senao
+se opcao = "2" entao
+    Para indice de 1 ate 5 faca
+        numeros3 [indice] <- numeros1[indice] - numeros2[indice]
+    fimpara
+fimse
+fimse
+
+fimalgoritmo
