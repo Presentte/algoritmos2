@@ -1,0 +1,28 @@
+algoritmo "Vetores"
+
+var
+nomes: vetor [1..5] de literal
+indice, sucesso: inteiro
+
+inicio
+Para indice de 1 ate 5 faca
+    Escreval ("Informe o nome a ser registrado")
+    leia (nomes[indice])
+fimpara
+limpatela
+
+Escreval ("Informe o nome a ser pesquisado")
+leia (pesquisa)
+sucesso <- 0
+Para indice de 1 ate 5 faca
+    se nomes [indice] = pesquisa entao
+        sucesso <- 1
+    fimse
+fimpara
+Se sucesso = 1 entao
+    Escreval ("Cliente localizado.")
+senao
+    Escreval ("Cliente não registrado.")
+fimse
+
+fimalgoritmo
