@@ -1,0 +1,13 @@
+algoritmo "Vetores"
+
+var
+vetorNomes: vetor[1..5] de literal
+indice: inteiro
+
+inicio
+Para indice de 1 ate 5 faca
+    Escreval ("Informe o seu nome")
+    leia (vetorNomes [indice])
+fimpara
+
+fimalgoritmo
