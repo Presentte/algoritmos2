@@ -1,0 +1,66 @@
+algoritmo "Função/Procedimento 3"
+
+var
+gabarito: vetor[1..10] de literal
+opcaoMenu: literal
+notaFinal: inteiro  
+
+Procedimento mostrarMenu ()
+inicio
+Escreval ("1 - Cadastrar o gabarito")
+Escreval ("2 - Cadastrar a prova")
+Escreval ("3 - Finalizar aplicação")
+leia (opcaoMenu)
+fimprocedimento
+
+Procedimento cadastrarGabarito ()
+var
+i: inteiro
+
+inicio
+para i de 1 ate 20 faca
+    Escreval ("Informe a resposta da questão ", i)
+    leia (gabarito[i])
+fimpara
+fimprocedimento
+
+Funcao cadastrarProva () : inteiro
+var
+nota, i: inteiro
+resposta: literal
+
+inicio
+nota <- 0
+para i de 1 ate 20 faca
+    Escreval ("Informe a resposta da questão ", i)
+    leia (resposta)
+    se resposta = gabarito[i] entao
+        nota <- nota + 1
+    fimse
+    retorne nota
+fimpara
+fimfuncao
+
+Funcao verificarSituacao (nota: inteiro): literal
+inicio
+    se nota >= 14 entao
+        retorne "Meus parabéns, você foi aprovado."
+    senao
+        retorne "Infelizmente você precisa repetir o módulo, você foi reprovado."
+    fimse
+fimfuncao
+
+inicio
+repita
+    mostrarMenu ()
+    escolha opcaoMenu
+        caso "1"
+            cadastrarGabarito ()
+        caso "2"
+            notaFinal <- cadastrarProva ()
+                Escreval (verificarSituacao (notaFinal))
+        outrocaso
+            Escreval ("Opção desconhecida")
+ate opcaoMenu = "3"
+
+fimalgoritmo
