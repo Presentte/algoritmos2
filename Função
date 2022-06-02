@@ -1,0 +1,17 @@
+algoritmo "Função"
+
+var
+funcao somar (a,b:inteiro) : inteiro
+inicio
+retorne <- a + b
+fimfuncao
+funcao testar () : inteiro
+inicio
+retorne somar(100,100) + 80
+fimfuncao
+
+inicio
+escreval (somar (10,20))
+escreval (testar ()) 
+
+fimalgoritmo
