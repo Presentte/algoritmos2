@@ -1,0 +1,78 @@
+algoritmo "Função/Procedimento 2"
+
+var
+opcaoMenu: literal
+clientes: vetor[1..5] de literal
+
+Procedimento mostrarMenu()
+inicio
+    Escreval ("1 - Cadastrar cliente")
+    Escreval ("2 - Pesquisar o cliente")
+    Escreval ("3 - Excluir o cliente")
+    leia (opcaoMenu)
+fimprocedimento
+
+Procedimento Cadastrar()
+var
+i: inteiro
+inicio
+    para i de 1 ate 5 faca
+        se clientes[i] = "" entao
+            Escreval ("Informe o nome do cliente")
+            leia (clientes[i])
+        fimse
+    fimpara
+fimprocedimento
+
+Procedimento Pesquisar()
+var
+i: inteiro
+nomeAPesquisar: literal
+indiceSucesso: literal
+
+inicio
+    Escreval ("Informe o nome do cliente a ser pesquisado")
+    leia (nomeAPesquisar)
+    indiceSucesso <- -1
+    para i de 1 ate 5 faca
+        se clientes[i] = nomeAPesquisar entao
+            indiceSucesso <- i
+            interrompa
+        fimse
+    fimpara
+    se indiceSucesso = -1 entao
+        Escreval ("Cliente não encontrado no banco de dados")
+    senao
+        Escreval ("Cliente encontrado em nosso banco de dados na posição ", indiceSucesso)
+    fimse
+fimprocedimento
+
+Procedimento Excluir
+var
+indiceExclusao: inteiro
+
+inicio
+    Escreval ("Informe o indice a excluir")
+    leia (indiceExclusao)
+    se (indiceExclusao) > 5 ou (indiceExclusao < 1) entao   
+        Escreval ("Indice inválido")
+    senao
+        clientes[indiceExclusao] <- ""
+    fimse
+fimprocedimento
+
+inicio
+repita
+    mostrarMenu()
+    escolha opcaoMenu
+            caso "1"
+                Cadastrar
+            caso "2"
+                Pesquisar
+            caso "3"
+                Excluir
+            outrocaso
+                Escreval("opcao inválida")
+        fimescolha
+    ate opcaoMenu = "4"
+fimalgoritmo
