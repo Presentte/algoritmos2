@@ -1,0 +1,27 @@
+algoritmo "Orientação a Objetos"
+
+tipo
+cadastroCliente = registro
+
+    nome: caractere
+    rg: caractere
+    idade: inteiro
+fimregistro
+
+var
+
+cliente1: cadastroCliente
+
+Inicio
+Escreval ("Digite o seu nome: ")
+Leia (cliente1.nome)
+
+Escreval ("Digite o seu rg: ")
+Leia (cliente1.rg)
+
+Escreval ("Digite a sua idade: ")
+Leia (cliente1.idade)
+
+Escreval ("Nome: ", cliente1.nome," - RG: ", cliente1.rg, " Idade: ", cliente1.idade)
+
+fimalgoritmo
